@@ -11,7 +11,7 @@ class Property(models.Model):
     created_at_datetime= models.DateField(null=False,blank=False, verbose_name="Fecha de creación")
     updated_at_datetime= models.DateField(null=False,blank=False, verbose_name="Fecha de actualización")
     disabled_at_datetime= models.DateField(null=True,blank=True, verbose_name="Fecha de deshabilitación")
-    status= models.CharField(max_length=35,null=False,blank=False, verbose_name="estado")
+    status= models.CharField(max_length=35,null=False,blank=False, verbose_name="estado",choices=(('activo','Activo'),('inactivo','Inactivo')))
 
     class Meta:
         verbose_name="Propiedad"
@@ -27,7 +27,7 @@ class Activity(models.Model):
     title = models.CharField(max_length=255,null=False, blank=False,verbose_name="título")
     created_at_datetime= models.DateField(null=False,blank=False, verbose_name="Fecha de creación")
     updated_at_datetime= models.DateField(null=False,blank=False, verbose_name="Fecha de actualización")
-    status= models.CharField(max_length=35,null=False,blank=False, verbose_name="estado")
+    status= models.CharField(max_length=35,null=False,blank=False, verbose_name="estado",choices=(('activo','Activo'),('inactivo','Inactivo')))
 
     class Meta:
         verbose_name="Actividad"
