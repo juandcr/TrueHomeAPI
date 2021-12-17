@@ -16,13 +16,15 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from apiRest.views import Activity_APIView, Activity_Cancelar,  Activity_Reagendar
+from apiRest.views import Activity_APIView, Activity_Cancelar,  Activity_Reagendar, Property_APIView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url('v1/activities/reagendar/(?P<pk>\d+)', Activity_Reagendar.as_view(),name="reagendar"),    
     url('v1/activities/cancelar/(?P<pk>\d+)', Activity_Cancelar.as_view(),name="reagendar"),    
-    url('v1/activities',Activity_APIView.as_view(),name="listar")
+    url('v1/activities',Activity_APIView.as_view(),name="listar"),
+    url('v1/properties',Property_APIView.as_view(),name="listarP")
+
     
 
 ]
