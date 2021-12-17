@@ -7,7 +7,7 @@ from datetime import datetime, time,timedelta
 class PropertySerializer(serializers.ModelSerializer):
     class Meta: 
         model = Property
-        fields=['pk','title','address']
+        fields=['pk','title','address','description','status']
 
 class SurveySerializer(serializers.HyperlinkedModelSerializer):
     class Meta: 

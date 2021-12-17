@@ -11,7 +11,7 @@ class Property(models.Model):
     title = models.CharField(max_length=255,null=False, blank=False,verbose_name="título")
     address = models.TextField(null=False, blank=False,verbose_name="dirección")
     description = models.TextField(null=False, blank=False,verbose_name="descripción")
-    created_at_datetime= models.DateTimeField(null=False,blank=False, verbose_name="Fecha de creación",auto_created=True)
+    created_at_datetime= models.DateTimeField(null=False,blank=False, verbose_name="Fecha de creación",default=datetime.now)
     updated_at_datetime= models.DateTimeField(null=False,blank=False, verbose_name="Fecha de actualización",auto_now=True)
     disabled_at_datetime= models.DateTimeField(null=True,blank=True, verbose_name="Fecha de deshabilitación")
     status= models.CharField(max_length=35,null=False,blank=False, verbose_name="estado",choices=(('activo','Activo'),('inactivo','Inactivo')))
